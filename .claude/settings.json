@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import docx; print\\(docx.__version__\\)\")",
+      "Read(//c/Users/darre/AppData/Roaming/gcloud/configurations/**)",
+      "Bash(git add *)"
+    ]
+  }
+}

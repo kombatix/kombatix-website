@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+#
+# pre-push — block pushes unless:
+#   1. The remote being pushed to matches kombatix/kombatix-website
+#   2. scripts/verify-context.sh --strict passes
+#
+# Bypass (use sparingly, and never for automated/CI contexts):
+#   git push --no-verify
+#   KOMBATIX_SKIP_CONTEXT_CHECK=1 git push
+#
+# git pre-push hook contract:
+#   stdin receives lines: "<local-ref> <local-sha> <remote-ref> <remote-sha>"
+#   $1 = remote name (e.g. "origin")
+#   $2 = remote URL
+#   exit 0 → push proceeds; non-zero → push aborted
+
+set -u
+
+REMOTE_NAME="${1:-}"
+REMOTE_URL="${2:-}"
+
+EXPECTED_HTTPS="https://github.com/kombatix/kombatix-website.git"
+EXPECTED_SSH="git@github.com:kombatix/kombatix-website.git"
+
+echo "▶ pre-push: remote=$REMOTE_NAME url=$REMOTE_URL"
+
+if [ "$REMOTE_URL" != "$EXPECTED_HTTPS" ] && [ "$REMOTE_URL" != "$EXPECTED_SSH" ]; then
+    echo "✗ pre-push BLOCKED — push target is not the expected Kombatix repo" >&2
+    echo "  expected: $EXPECTED_HTTPS (or SSH equivalent)" >&2
+    echo "  got:      $REMOTE_URL" >&2
+    echo "" >&2
+    echo "If this is intentional, re-run with --no-verify." >&2
+    exit 1
+fi
+
+SCRIPT_DIR="$(git rev-parse --show-toplevel)/scripts"
+
+if [ ! -x "$SCRIPT_DIR/verify-context.sh" ]; then
+    echo "✗ pre-push BLOCKED — scripts/verify-context.sh not found or not executable" >&2
+    echo "  run scripts/install-hooks.sh to repair" >&2
+    exit 1
+fi
+
+"$SCRIPT_DIR/verify-context.sh" --strict
+VERIFY_EXIT=$?
+
+if [ "$VERIFY_EXIT" -ne 0 ]; then
+    echo "" >&2
+    echo "✗ pre-push BLOCKED — context verification failed (see above)" >&2
+    echo "  fix the drift, or bypass with: git push --no-verify" >&2
+    exit 1
+fi
+
+echo "✓ pre-push: context verified, push proceeding"
+exit 0

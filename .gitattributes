@@ -1,0 +1,40 @@
+# Default: let git choose based on content.
+* text=auto
+
+# Shell scripts and git hooks MUST have LF endings — CRLF breaks bash
+# shebangs on Linux/macOS (`/usr/bin/env bash^M: No such file or directory`).
+# Without this, a Windows contributor's CRLF-converted scripts fail on CI.
+*.sh text eol=lf
+.githooks/* text eol=lf
+.envrc text eol=lf
+
+# Node/TypeScript source — keep LF everywhere for consistency across OS
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Markdown and CSS — LF
+*.md text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+
+# Binary files — never diff or merge as text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary

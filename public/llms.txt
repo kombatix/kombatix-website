@@ -1,0 +1,85 @@
+# Kombatix
+
+> Real-time identity scoring for friendly fraud defense and pre-authorization fraud screening. Two products built on a shared identity graph that strengthens every merchant in the network.
+
+Kombatix is a B2B SaaS platform that helps merchants fight friendly fraud — cases where authorized cardholders dispute their own legitimate purchases to obtain refunds without returning goods or canceling services. It sits in the gap between upstream fraud prevention (Kount, Signifyd, Stripe Radar) and downstream chargeback resolution (Ethoca, Verifi, Chargebacks911), scoring identity at two critical moments: pre-authorization and dispute.
+
+## Products
+
+### Kombatix Defense — Dispute-Time Scoring
+
+When a customer disputes a charge, Kombatix Defense scores the disputing identity against the original transaction in milliseconds.
+
+- Three scoring engines running in parallel: Identity Match, Identity Risk, Behavioral Risk
+- Composite 0-100 Defense Score with AI-generated evidence narrative
+- Field-level identity match breakdown (name, email, phone, billing, shipping)
+- REST API with sub-second response, and a no-code web application
+- Use at first contact to deflect refund abuse; use at representment to win chargebacks
+
+### Kombatix PreAuth — Pre-Authorization Screening
+
+Before authorization completes, Kombatix PreAuth checks the transaction against the Kombatix Network — the growing database of identities confirmed as friendly fraud by other merchants.
+
+- Hit / no-hit response in under 200ms
+- Sub-cent pricing on no-hit checks
+- Complements, does not replace, upstream fraud prevention stacks
+- Use at checkout, subscription renewal, or any authorization event
+
+## The Kombatix Network
+
+Every Kombatix Defense customer scoring friendly fraud (composite score 60+) contributes the confirmed identity to the Kombatix Network. Every PreAuth customer screens against the network. The more merchants participating, the more friendly fraudsters caught at pre-authorization before transactions complete. The network compounds with every customer.
+
+## Pricing
+
+### Kombatix Defense
+- Standard: $75/month — 75 Defense hits included; $0.60 per additional hit
+- Advanced: $500/month — 1,000 Defense hits included; $0.40 per additional hit
+- Enterprise: custom pricing — 50,000+ calls/month, dedicated product specialist, SLA
+
+### Kombatix PreAuth
+- Starter: $49/month — ~25K transactions; $0.005 no-hit, $0.15 hit; $49 monthly credit
+- Growth: $149/month (recommended) — 25K–100K transactions; $0.005 no-hit, $0.10 hit; $149 monthly credit
+- Enterprise: $499/month — 100K+ transactions; $0.005 no-hit, $0.05 hit; $499 monthly credit
+- One-time $250 implementation fee applies to all PreAuth tiers
+
+## Who Kombatix Is For
+
+- Subscription / SaaS with free or low-cost trials (trial-to-paid is the highest-risk moment)
+- Digital goods and services (no physical delivery evidence)
+- High-volume e-commerce with repeat customers
+- Any merchant where friendly fraud is the top chargeback reason
+
+## Who Kombatix Is Not For
+
+- True fraud prevention at checkout (use Kount, Signifyd, Stripe Radar upstream)
+- Chargeback alert resolution in the pre-dispute window (use Ethoca, Verifi — Kombatix complements these tools)
+
+## Integration
+
+- REST API — JSON in, JSON out, sub-second response
+- Web application for no-code use by support teams
+- API keys and full developer documentation delivered within 4 business hours of signup
+- Self-service developer portal available immediately
+- Sandbox environment for integration testing
+
+## Proven Results
+
+A leading digital subscription company with 500+ daily paying subscribers reduced refund rate from 10% to 5%, cut post-contact disputes by 60%, and lifted chargeback representment win rate from 40% to 80% after integrating Kombatix Defense.
+
+## Company
+
+- Founded: Kombatix Inc.
+- Location: Eagle, Idaho, USA
+- Contact: operations@kombatix.io
+
+## Links
+
+- Home: https://kombatix.io
+- Kombatix Defense: https://kombatix.io/defense
+- Kombatix PreAuth: https://kombatix.io/preauth
+- How It Works: https://kombatix.io/how-it-works
+- Pricing: https://kombatix.io/pricing
+- Partners: https://kombatix.io/partners
+- API: https://kombatix.io/api
+- Blog: https://blog.kombatix.io
+- Sign Up: https://app.kombatix.ai/signup
