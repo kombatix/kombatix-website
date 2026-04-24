@@ -46,8 +46,10 @@ const config: Config = {
         "h3": ["clamp(1.375rem, 2vw, 1.5rem)", { lineHeight: "1.3", fontWeight: "600" }],
         "h4": ["clamp(1.125rem, 1.5vw, 1.25rem)", { lineHeight: "1.4", fontWeight: "600" }],
         "body-lg": ["clamp(1rem, 1.2vw, 1.125rem)", { lineHeight: "1.6" }],
+        "body":    ["clamp(0.9375rem, 1vw, 1rem)", { lineHeight: "1.6" }],
         "body-sm": ["0.875rem", { lineHeight: "1.5" }],
         "eyebrow": ["0.875rem", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+        "mono":    ["0.875rem", { lineHeight: "1.5" }],
       },
       boxShadow: {
         // Accent glow for the footer CTA band punch button
