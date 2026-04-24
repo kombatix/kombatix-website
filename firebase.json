@@ -77,10 +77,12 @@
     }
   ],
   "emulators": {
-    "functions": { "port": 5001 },
-    "hosting": { "port": 5000 },
-    "firestore": { "port": 8080 },
-    "ui": { "enabled": true, "port": 4000 },
+    "functions": { "host": "127.0.0.1", "port": 9601 },
+    "hosting":   { "host": "127.0.0.1", "port": 9600 },
+    "firestore": { "host": "127.0.0.1", "port": 9680 },
+    "ui":        { "enabled": true, "host": "127.0.0.1", "port": 9690 },
+    "hub":       { "host": "127.0.0.1", "port": 9697 },
+    "logging":   { "host": "127.0.0.1", "port": 9698 },
     "singleProjectMode": true
   }
 }

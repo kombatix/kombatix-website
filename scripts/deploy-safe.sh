@@ -21,14 +21,18 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PROJECT_ID="kombatix-website"
+ACCOUNT="operations@kombatix.io"
 
 echo "▶ deploy-safe — verifying context before deploy"
 "$SCRIPT_DIR/verify-context.sh" --strict
 
 echo ""
-echo "▶ deploy-safe — running: firebase --project $PROJECT_ID $*"
+echo "▶ deploy-safe — running: firebase --project $PROJECT_ID --account $ACCOUNT $*"
 cd "$REPO_ROOT"
 
-# First positional sometimes looks like a subcommand (hosting:channel:deploy)
-# and sometimes looks like a flag (--only). Either way, prepend --project.
-exec firebase --project "$PROJECT_ID" "$@"
+# firebase --project scopes the operation to kombatix-website regardless of
+# `firebase use` alias state. --account forces the firebase CLI to use the
+# kombatix login from the firebase-tools credential store, regardless of
+# which account `firebase login:use` has flipped to globally. Together they
+# make the deploy target fully explicit — no ambient state can redirect it.
+exec firebase --project "$PROJECT_ID" --account "$ACCOUNT" "$@"

@@ -3,7 +3,33 @@
     "allow": [
       "Bash(python -c \"import docx; print\\(docx.__version__\\)\")",
       "Read(//c/Users/darre/AppData/Roaming/gcloud/configurations/**)",
-      "Bash(git add *)"
+      "Read(//c/Users/darre/AppData/Local/Temp/claude/**)",
+      "Bash(git add *)",
+      "Bash(git diff *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(netstat -ano)",
+      "Bash(direnv version *)",
+      "Bash(direnv status *)",
+      "Bash(gcloud config configurations list *)",
+      "Bash(gcloud config configurations describe *)",
+      "Bash(gcloud config get-value *)",
+      "Bash(gcloud config list *)",
+      "Bash(gcloud auth list *)",
+      "Bash(gcloud projects describe *)",
+      "Bash(gh auth status *)",
+      "Bash(gh api user *)",
+      "Bash(gh repo view *)",
+      "Bash(firebase projects:list *)",
+      "Bash(firebase login:list *)",
+      "Bash(firebase use *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(chmod +x *)"
     ]
   }
 }

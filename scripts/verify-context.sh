@@ -278,7 +278,7 @@ else
 fi
 
 # ──────────────────────────────────────────────────────────────────────────
-# 4. Firebase project
+# 4. Firebase project + account
 # ──────────────────────────────────────────────────────────────────────────
 if ! command -v firebase >/dev/null 2>&1; then
     warn "firebase" "firebase CLI not found on PATH"
@@ -292,6 +292,25 @@ else
     else
         fail "firebase project" "wrong Firebase project" \
              "$EXPECTED_FIREBASE_PROJECT" "$ACTUAL_FIREBASE_PROJECT"
+    fi
+
+    # firebase CLI has its own auth layer — separate from gcloud. The active
+    # firebase account is set by `firebase login:use` (global state) and is
+    # NOT controlled by any env var. Check it separately.
+    #
+    # `firebase login:list` outputs:
+    #   Logged in as <active-account>
+    #   Other available accounts ...
+    ACTUAL_FIREBASE_ACCOUNT=$(firebase login:list 2>/dev/null \
+        | grep -E "^Logged in as" | sed -E 's/^Logged in as[[:space:]]+//' \
+        || echo "<error>")
+    if contains "$ACTUAL_FIREBASE_ACCOUNT" "${FORBIDDEN_GCLOUD_ACCOUNTS[@]}"; then
+        forbidden "firebase active account" "$ACTUAL_FIREBASE_ACCOUNT → FORBIDDEN tenant"
+    elif [ "$ACTUAL_FIREBASE_ACCOUNT" = "$EXPECTED_GCLOUD_ACCOUNT" ]; then
+        pass "firebase active account" "$ACTUAL_FIREBASE_ACCOUNT"
+    else
+        fail "firebase active account" "wrong firebase-CLI account" \
+             "$EXPECTED_GCLOUD_ACCOUNT" "$ACTUAL_FIREBASE_ACCOUNT"
     fi
 fi
 
