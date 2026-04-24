@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/generate-llms-full.mjs",
     "lint": "next lint",
     "check": "tsc --noEmit",
     "preview": "firebase hosting:channel:deploy preview --expires 7d",

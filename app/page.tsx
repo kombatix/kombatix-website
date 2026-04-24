@@ -33,9 +33,6 @@ export const metadata: Metadata = {
     description:
       "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Two products, one network. Start free.",
     url: "https://kombatix.io/",
-    images: [
-      { url: "/og/home.png", width: 1200, height: 630, alt: "Kombatix" },
-    ],
   },
 };
 

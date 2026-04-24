@@ -36,9 +36,6 @@ export const metadata: Metadata = {
     description:
       "Screen every transaction against the Kombatix Network of confirmed friendly fraudsters. Sub-cent no-hit checks, millisecond response.",
     url: "https://kombatix.io/preauth",
-    images: [
-      { url: "/og/preauth.png", width: 1200, height: 630, alt: "Kombatix PreAuth" },
-    ],
   },
 };
 

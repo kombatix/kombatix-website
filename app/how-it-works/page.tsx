@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/Table";
 
 import { ScoreDial } from "@/components/score-dial/ScoreDial";
+import { CostDecisionTree } from "@/components/cost-decision-tree/CostDecisionTree";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 
 const SIGNUP_URL = "https://app.kombatix.ai/signup";
@@ -32,9 +33,6 @@ export const metadata: Metadata = {
     description:
       "Two products, three scoring engines, one composite score. Learn how Kombatix fights friendly fraud at every stage of the lifecycle.",
     url: "https://kombatix.io/how-it-works",
-    images: [
-      { url: "/og/how-it-works.png", width: 1200, height: 630, alt: "How Kombatix Works" },
-    ],
   },
 };
 
@@ -85,35 +83,8 @@ export default function HowItWorksPage() {
           </p>
         </div>
 
-        {/* CMP-03 cost decision tree placeholder */}
-        <div className="mt-12 rounded-xl bg-off-white border border-gray-200 p-8 md:p-12 text-center">
-          <p className="text-eyebrow text-gray-500 mb-6">Decision Tree · CMP-03</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <Card tone="light" padding="md">
-              <p className="text-eyebrow text-score-low">Without Kombatix</p>
-              <p className="mt-3 text-h3 text-navy">Direct refund path</p>
-              <p className="mt-2 text-body-sm text-gray-600">
-                $25 refund issued. $25 transaction lost.
-              </p>
-            </Card>
-            <Card tone="light" padding="md" className="border-2 border-accent">
-              <p className="text-eyebrow text-accent">With Kombatix</p>
-              <p className="mt-3 text-h3 text-navy">Deflection at first contact</p>
-              <p className="mt-2 text-body-sm text-gray-600">
-                Defense confirms friendly fraud. Agent deflects. Transaction
-                retained.
-              </p>
-            </Card>
-            <Card tone="light" padding="md">
-              <p className="text-eyebrow text-score-low">Full chargeback</p>
-              <p className="mt-3 text-h3 text-navy">Up to $45 lost</p>
-              <p className="mt-2 text-body-sm text-gray-600">
-                $25 refund + $20 chargeback fee. Failed representment = full
-                loss.
-              </p>
-            </Card>
-          </div>
-        </div>
+        {/* CMP-03 — Cost decision tree */}
+        <CostDecisionTree className="mt-12" />
       </Section>
 
       {/* 3 — Kombatix PreAuth (OFF-WHITE) */}

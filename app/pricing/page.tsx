@@ -22,9 +22,6 @@ export const metadata: Metadata = {
     description:
       "Transparent pricing: PreAuth from $49/mo, Defense from $75/mo. Full three-engine scoring. No long-term contract.",
     url: "https://kombatix.io/pricing",
-    images: [
-      { url: "/og/pricing.png", width: 1200, height: 630, alt: "Kombatix Pricing" },
-    ],
   },
 };
 

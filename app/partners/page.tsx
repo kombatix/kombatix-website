@@ -32,9 +32,6 @@ export const metadata: Metadata = {
     description:
       "Embed Kombatix scoring into your platform. API integration, white-label licensing, and reseller options for payments partners.",
     url: "https://kombatix.io/partners",
-    images: [
-      { url: "/og/partners.png", width: 1200, height: 630, alt: "Kombatix Partnerships" },
-    ],
   },
 };
 

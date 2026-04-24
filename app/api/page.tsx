@@ -32,9 +32,6 @@ export const metadata: Metadata = {
     description:
       "Score identity in a single POST. JSON in, JSON out, sub-second response. API keys delivered within 4 business hours.",
     url: "https://kombatix.io/api",
-    images: [
-      { url: "/og/api.png", width: 1200, height: 630, alt: "Kombatix API" },
-    ],
   },
 };
 

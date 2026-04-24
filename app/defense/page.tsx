@@ -38,9 +38,6 @@ export const metadata: Metadata = {
     description:
       "Score dispute identity against the original transaction in milliseconds. Deflect refund abuse and win chargeback representments.",
     url: "https://kombatix.io/defense",
-    images: [
-      { url: "/og/defense.png", width: 1200, height: 630, alt: "Kombatix Defense" },
-    ],
   },
 };
 
