@@ -9,6 +9,7 @@ import { FAQItem } from "@/components/ui/FAQItem";
 
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { PricingToggle } from "./PricingToggle";
+import { TrackPageView } from "@/components/analytics/TrackPageView";
 
 const SIGNUP_URL = "https://app.kombatix.ai/signup";
 
@@ -82,6 +83,7 @@ const FAQS: Array<{ question: string; answer: string; detail?: string }> = [
 export default function PricingPage() {
   return (
     <PageShell>
+      <TrackPageView event="pricing_view" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLd(

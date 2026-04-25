@@ -12,22 +12,23 @@
  *   6. Submit to HubSpot Forms API v3 (public submission endpoint — no auth needed)
  *   7. Return 200 on success, 4xx on validation, 5xx on backend failure
  *
- * Secrets required (set via `firebase functions:secrets:set`):
+ * Secrets required (set via `scripts/firebase.sh functions:secrets:set`):
  *   - HUBSPOT_PORTAL_ID
  *   - HUBSPOT_FORM_GUID
  *
  * HubSpot form field names below MUST match what's configured in the HubSpot form.
  * Update them if Darrel renames fields in HubSpot.
+ *
+ * NOTE: Firebase Admin SDK is lazy-initialized inside the handler (not at
+ * module top-level). This avoids the 10-second "Cannot determine backend
+ * specification" timeout during function definition load, which happens
+ * when ADC is not configured in the emulator.
  */
 
 import { onRequest, type Request } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
-import { initializeApp, getApps } from "firebase-admin/app";
-import { getFirestore, FieldValue } from "firebase-admin/firestore";
 import { logger } from "firebase-functions/v2";
 import type { Response } from "express";
-
-if (getApps().length === 0) initializeApp();
 
 const HUBSPOT_PORTAL_ID = defineSecret("HUBSPOT_PORTAL_ID");
 const HUBSPOT_FORM_GUID = defineSecret("HUBSPOT_FORM_GUID");
@@ -76,8 +77,29 @@ function applyCors(res: Response, origin: string | undefined): void {
   res.set("Vary", "Origin");
 }
 
+// ──────────────────────────────────────────────────────────────────
+// Lazy-loaded Firebase Admin SDK + Firestore — initialized on first use
+// ──────────────────────────────────────────────────────────────────
+let firestoreCache: import("firebase-admin/firestore").Firestore | undefined;
+let fieldValueCache: typeof import("firebase-admin/firestore").FieldValue | undefined;
+
+async function getDb(): Promise<{
+  db: import("firebase-admin/firestore").Firestore;
+  FieldValue: typeof import("firebase-admin/firestore").FieldValue;
+}> {
+  if (firestoreCache && fieldValueCache) {
+    return { db: firestoreCache, FieldValue: fieldValueCache };
+  }
+  const { initializeApp, getApps } = await import("firebase-admin/app");
+  const admin = await import("firebase-admin/firestore");
+  if (getApps().length === 0) initializeApp();
+  firestoreCache = admin.getFirestore();
+  fieldValueCache = admin.FieldValue;
+  return { db: firestoreCache, FieldValue: fieldValueCache };
+}
+
 async function checkRateLimit(ip: string): Promise<boolean> {
-  const db = getFirestore();
+  const { db, FieldValue } = await getDb();
   const now = Date.now();
   const windowStart = now - 60_000;
   const ref = db.collection("rateLimits").doc(ip.replace(/[^a-zA-Z0-9.:_-]/g, "_"));
@@ -168,14 +190,13 @@ export const partnerInquiry = onRequest(
 
     // Backup write to Firestore
     try {
-      await getFirestore()
-        .collection("partnerInquiries")
-        .add({
-          ...body,
-          ip,
-          userAgent: req.headers["user-agent"] || "",
-          receivedAt: FieldValue.serverTimestamp(),
-        });
+      const { db, FieldValue } = await getDb();
+      await db.collection("partnerInquiries").add({
+        ...body,
+        ip,
+        userAgent: req.headers["user-agent"] || "",
+        receivedAt: FieldValue.serverTimestamp(),
+      });
     } catch (err) {
       logger.error("Firestore backup write failed", err);
       // Non-fatal — HubSpot is the primary destination

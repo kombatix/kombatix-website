@@ -13,6 +13,7 @@ import { StatCard } from "@/components/ui/StatCard";
 import { TrustBar } from "@/components/ui/TrustBar";
 
 import { ScoreDialRotator } from "@/components/score-dial/ScoreDialRotator";
+import { SignupButton } from "@/components/analytics/SignupButton";
 
 import {
   websiteSchema,
@@ -74,9 +75,9 @@ export default function HomePage() {
                 and refunds you don&apos;t owe.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Button href={SIGNUP_URL} variant="primary" size="lg">
+                <SignupButton event="signup_click_defense" href={SIGNUP_URL}>
                   Start Free <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </Button>
+                </SignupButton>
                 <Button href="/how-it-works" variant="ghost-dark" size="lg">
                   See How It Works
                 </Button>

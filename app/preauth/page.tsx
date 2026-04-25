@@ -23,6 +23,7 @@ import {
   breadcrumbSchema,
   jsonLd,
 } from "@/lib/schema";
+import { SignupButton } from "@/components/analytics/SignupButton";
 
 const SIGNUP_URL = "https://app.kombatix.ai/signup";
 
@@ -84,9 +85,9 @@ export default function PreAuthPage() {
                 tries to pay you, you know before the charge goes through.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Button href={SIGNUP_URL} variant="primary" size="lg">
+                <SignupButton event="signup_click_preauth" href={SIGNUP_URL}>
                   Start Screening <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </Button>
+                </SignupButton>
                 <Button href="/pricing#preauth" variant="ghost-dark" size="lg">
                   See Pricing
                 </Button>

@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/Table";
 
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { TrackPageView } from "@/components/analytics/TrackPageView";
 
 const SIGNUP_URL = "https://app.kombatix.ai/signup";
 
@@ -130,6 +131,7 @@ Content-Type: application/json
 export default function ApiPage() {
   return (
     <PageShell>
+      <TrackPageView event="api_page_view" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLd(

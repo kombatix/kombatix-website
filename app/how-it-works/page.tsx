@@ -20,6 +20,7 @@ import {
 import { ScoreDial } from "@/components/score-dial/ScoreDial";
 import { CostDecisionTree } from "@/components/cost-decision-tree/CostDecisionTree";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { TrackScrollDepth } from "@/components/analytics/TrackScrollDepth";
 
 const SIGNUP_URL = "https://app.kombatix.ai/signup";
 
@@ -39,6 +40,7 @@ export const metadata: Metadata = {
 export default function HowItWorksPage() {
   return (
     <PageShell>
+      <TrackScrollDepth />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLd(

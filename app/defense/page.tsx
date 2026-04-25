@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/Table";
 
 import { ScoreDial } from "@/components/score-dial/ScoreDial";
+import { SignupButton } from "@/components/analytics/SignupButton";
 
 import {
   softwareApplicationSchema,
@@ -87,9 +88,9 @@ export default function DefensePage() {
                 representment package.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Button href={SIGNUP_URL} variant="primary" size="lg">
+                <SignupButton event="signup_click_defense" href={SIGNUP_URL}>
                   Start Defending <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </Button>
+                </SignupButton>
                 <Button href="/how-it-works" variant="ghost-dark" size="lg">
                   See How It Works
                 </Button>
