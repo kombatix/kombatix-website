@@ -63,18 +63,30 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Kombatix",
+              name: "Kombatix, LLC",
+              alternateName: "Kombatix",
               url: SITE_URL,
               logo: `${SITE_URL}/logo.png`,
-              contactPoint: {
-                "@type": "ContactPoint",
-                email: "operations@kombatix.io",
-                contactType: "Customer Service",
-              },
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  email: "operations@kombatix.io",
+                  contactType: "Customer Service",
+                },
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+1-208-944-1422",
+                  contactType: "Customer Service",
+                  areaServed: "US",
+                  availableLanguage: "English",
+                },
+              ],
               address: {
                 "@type": "PostalAddress",
+                streetAddress: "2976 E State St, STE 120-2914",
                 addressLocality: "Eagle",
                 addressRegion: "ID",
+                postalCode: "83616",
                 addressCountry: "US",
               },
             }),

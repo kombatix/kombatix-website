@@ -144,6 +144,7 @@ Firebase Hosting **not** App Hosting. App Hosting is for SSR/ISR workloads; this
 - **JSON-LD on every page.** `Organization` sitewide, `SoftwareApplication` on product pages (both Defense and PreAuth), `FAQPage` on pricing and /how-it-works, `BreadcrumbList` on interior pages, `WebSite` on home.
 - **Hero score dial is a built component, not an AI image.** Built as a real React/SVG animated component. AI images are for infographic sections, not the hero.
 - **No "free" language around scoring below 60.** Use "pay for actionable outcomes" framing. Reason: the policy may change, and public commitments are hard to walk back.
+- **No SOC 2 claims of any kind.** Not "SOC 2 Type II", not "SOC 2 In Progress", not "SOC 2 ready" — none of it. We do not currently have a SOC 2 status we can stand behind. The earlier "SOC 2 In Progress" guidance is **revoked**: the project is not actually in progress. Confirmed with Darrel 2026-04. Re-introduce only when (a) we begin a real SOC 2 audit and (b) Darrel signs off on the wording.
 
 ---
 
@@ -214,6 +215,7 @@ When working on this repo, the following behaviors indicate the session has drif
 - Putting a "$100B" or "$41B" friendly-fraud stat anywhere without a cited current-year source
 - Writing "free" or "no charge" language around sub-60 scoring — use "pay for actionable outcomes"
 - Attributing customer stories to named companies — current policy is anonymized + specific (see architecture doc section 3, page 1 for exact approved copy)
+- Adding any SOC 2 language ("Type II", "In Progress", "ready", "compliant") — we currently have NO SOC 2 status to claim. The earlier "In Progress" wording is revoked.
 
 ---
 

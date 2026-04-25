@@ -10,11 +10,15 @@ interface TrustBarProps {
 // Thin band, typically directly under the hero (same dark background).
 // Horizontal list of text badges separated by middle dots.
 //
-// Current approved content (architecture doc, homepage):
-//   "API-First · REST Integration · Self-Service Portal ·
-//    SOC 2 In Progress · No Long-Term Contract"
+// Current approved content (homepage):
+//   "Self Signup · Instant Web Access · REST API ·
+//    Developer Portal · No Long-Term Contract"
 //
-// DO NOT change "SOC 2 In Progress" to "SOC 2 Type II" — see CLAUDE.md.
+// SOC 2 status is intentionally NOT included anywhere on the site —
+// we do not currently make a SOC 2 claim of any kind. NEVER add
+// "SOC 2 Type II" or "SOC 2 In Progress" without explicit Darrel
+// approval; both are competitor-positioning or compliance claims
+// we cannot back today.
 export function TrustBar({ items, className }: TrustBarProps) {
   return (
     <div

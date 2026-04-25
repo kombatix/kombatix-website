@@ -37,7 +37,6 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
-      { label: "Opt-Out Preferences", href: "/opt-out" },
     ],
   },
 ];
@@ -83,33 +82,45 @@ export function Footer() {
             </nav>
           ))}
 
-          {/* Contact column — address + contact email */}
-          <nav aria-label="Contact">
+          {/* Contact column — Kombatix, LLC contact info */}
+          <div>
             <h2 className="text-eyebrow text-white uppercase tracking-[0.1em] font-bold mb-4">
               Contact
             </h2>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-body text-white/70">
               <li>
                 <a
                   href="mailto:operations@kombatix.io"
-                  className="text-body text-white/70 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
+                  className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
                 >
                   operations@kombatix.io
                 </a>
               </li>
               <li>
-                <address className="text-body text-white/70 not-italic">
+                <a
+                  href="tel:+12089441422"
+                  className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
+                >
+                  (208) 944-1422
+                </a>
+              </li>
+              <li>
+                <address className="not-italic leading-relaxed">
+                  Kombatix, LLC
+                  <br />
+                  2976 E State St, STE 120-2914
+                  <br />
                   Eagle, ID 83616
                 </address>
               </li>
             </ul>
-          </nav>
+          </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-body-sm text-white/60">
-            © {year} Kombatix Inc. All rights reserved.
+            © {year} Kombatix, LLC. All rights reserved.
           </p>
           {/* Social icons placeholder — add when handles confirmed */}
           <div className="text-body-sm text-white/60" aria-hidden="true" />
