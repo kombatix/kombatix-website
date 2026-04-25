@@ -17,7 +17,11 @@ interface PricingCardProps {
 
 // DESIGN.md §7.7 — Pricing cards. Middle card in a triple gets the
 // `recommended` treatment: thicker accent-color border + ribbon.
-// Price renders as display-size navy bold, suffix as body gray-500 inline.
+//
+// Price treatment: numeric tiers render with a small "starts at" label
+// stacked above the dollar amount, with the period suffix (/month) sitting
+// inline next to the number. "Custom" and "Contact Us" prices skip the
+// "starts at" label since they are not starting prices.
 export function PricingCard({
   planName,
   price,
@@ -30,6 +34,9 @@ export function PricingCard({
   ribbonLabel = "Recommended",
   className,
 }: PricingCardProps) {
+  const isNonNumeric = price === "Custom" || price === "Contact Us";
+  const isPrefixed = price.startsWith("$");
+
   return (
     <div
       className={cn(
@@ -49,18 +56,27 @@ export function PricingCard({
 
       <h3 className="text-h3 text-navy font-semibold">{planName}</h3>
 
-      <p className="mt-4 flex items-baseline gap-1">
-        {price.startsWith("$") || price === "Custom" || price === "Contact Us" ? (
-          <span className="text-display text-navy font-bold">{price}</span>
-        ) : (
-          <>
-            <span className="text-display text-navy font-bold">${price}</span>
-          </>
+      {/* Price block — stacked "starts at" + amount + inline suffix */}
+      <div className="mt-4">
+        {!isNonNumeric && (
+          <p className="text-body-sm text-gray-500 font-medium uppercase tracking-wide leading-none">
+            Starts at
+          </p>
         )}
-        {price !== "Custom" && price !== "Contact Us" && (
-          <span className="text-body text-gray-500">{priceSuffix}</span>
-        )}
-      </p>
+        <p
+          className={cn(
+            "flex items-baseline gap-1",
+            !isNonNumeric && "mt-1",
+          )}
+        >
+          <span className="text-display text-navy font-bold">
+            {isNonNumeric || isPrefixed ? price : `$${price}`}
+          </span>
+          {!isNonNumeric && (
+            <span className="text-body text-gray-500">{priceSuffix}</span>
+          )}
+        </p>
+      </div>
 
       {intro && <p className="mt-4 text-body text-gray-600">{intro}</p>}
 

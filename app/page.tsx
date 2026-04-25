@@ -68,6 +68,10 @@ export default function HomePage() {
                 refund, before you pay out.
               </h1>
               <p className="mt-6 text-body-lg text-white/72 max-w-2xl">
+                Fraud prevention stops strangers. Chargeback tools fight
+                disputes after they&apos;re filed. Nothing sits in the middle.
+              </p>
+              <p className="mt-4 text-body-lg text-white/72 max-w-2xl">
                 Kombatix scores identity at every critical point —
                 pre-authorization screening against a growing network of known
                 friendly fraudsters, and dispute-time defense with composite
@@ -76,7 +80,7 @@ export default function HomePage() {
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <SignupButton event="signup_click_defense" href={SIGNUP_URL}>
-                  Start Free <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                  Get Started <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </SignupButton>
                 <Button href="/how-it-works" variant="ghost-dark" size="lg">
                   See How It Works
@@ -94,10 +98,10 @@ export default function HomePage() {
           <div className="mt-16 border-t border-white/10 pt-8">
             <TrustBar
               items={[
-                "API-First",
-                "REST Integration",
-                "Self-Service Portal",
-                "SOC 2 In Progress",
+                "Self Signup",
+                "Instant Web Access",
+                "REST API",
+                "Developer Portal",
                 "No Long-Term Contract",
               ]}
             />
@@ -105,8 +109,74 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2 — Two-Product Panel (LIGHT) */}
+      {/* 2 — The Gap in the Fraud Stack (LIGHT) */}
       <Section tone="light" spacing="default">
+        <div className="max-w-3xl">
+          <EyebrowTag tone="light">The Gap in the Fraud Stack</EyebrowTag>
+          <h2 className="text-display text-navy mt-3">
+            Fraud prevention stops strangers. Chargeback tools fight disputes
+            after they&apos;re filed. Nothing sits in the middle.
+          </h2>
+          <p className="mt-6 text-body-lg text-gray-600">
+            Your Kount or Signifyd catches the stolen credit card at checkout.
+            Your Ethoca or Verifi alerts give you a window to resolve after a
+            dispute is filed with the bank. But in between — when the
+            authorized cardholder changes their mind, or exploits your refund
+            policy, or disputes a legitimate purchase claiming it wasn&apos;t
+            them — you have nothing. No score. No proof. No answer. You guess,
+            or you refund.
+          </p>
+        </div>
+
+        {/* IMG-02 placeholder — Nano Banana Pro in Phase 6 */}
+        <div
+          className="mt-12 rounded-xl bg-off-white border border-gray-200 p-8 md:p-12 flex items-center justify-center"
+          aria-label="Gap diagram — placeholder for IMG-02"
+        >
+          <div className="grid grid-cols-3 gap-4 w-full max-w-3xl">
+            <div className="rounded-lg border border-gray-200 bg-white p-6 text-center">
+              <p className="text-eyebrow text-gray-500">Stage 1</p>
+              <p className="mt-2 font-semibold text-navy">Fraud Prevention</p>
+              <p className="mt-1 text-body-sm text-gray-500">
+                Kount · Signifyd · Stripe Radar
+              </p>
+            </div>
+            <div className="rounded-lg border-2 border-accent bg-accent/5 p-6 text-center">
+              <p className="text-eyebrow text-accent">Gap Zone</p>
+              <p className="mt-2 font-semibold text-navy">Kombatix scores here</p>
+              <p className="mt-1 text-body-sm text-gray-600">
+                PreAuth screening · Defense scoring
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-white p-6 text-center">
+              <p className="text-eyebrow text-gray-500">Stage 3</p>
+              <p className="mt-2 font-semibold text-navy">Chargeback Resolution</p>
+              <p className="mt-1 text-body-sm text-gray-500">
+                Ethoca · Verifi · Chargebacks911
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p className="mt-8 text-body-lg text-gray-600 max-w-3xl">
+          Kombatix fills the gap with real-time identity scoring at two
+          critical moments: pre-authorization (PreAuth) screens against a
+          known-fraudster network, and dispute-time (Defense) scores identity
+          against the original transaction and returns a 0–100 composite score
+          you can act on.
+        </p>
+        <p className="mt-6 text-body-lg text-gray-600 max-w-3xl">
+          And when a dispute does land at the bank, every Defense report ships
+          with a structured evidence package — composite score, identity match
+          breakdown, reason codes, and a ready-to-use AI Defense Narrative —
+          your team attaches directly to chargeback representment. Issuers see
+          timestamped identity evidence instead of a guess; cases that used to
+          be write-offs become winnable.
+        </p>
+      </Section>
+
+      {/* 3 — Two-Product Panel (OFF-WHITE) */}
+      <Section tone="off-white" spacing="default">
         <div className="max-w-3xl">
           <EyebrowTag tone="light">One platform · Two products</EyebrowTag>
           <h2 className="text-display text-navy mt-3">
@@ -159,64 +229,6 @@ export default function HomePage() {
             </div>
           </Card>
         </div>
-      </Section>
-
-      {/* 3 — The Gap in the Fraud Stack (LIGHT) */}
-      <Section tone="off-white" spacing="default">
-        <div className="max-w-3xl">
-          <EyebrowTag tone="light">The Gap in the Fraud Stack</EyebrowTag>
-          <h2 className="text-display text-navy mt-3">
-            Fraud prevention stops strangers. Chargeback tools fight disputes
-            after they&apos;re filed. Nothing sits in the middle.
-          </h2>
-          <p className="mt-6 text-body-lg text-gray-600">
-            Your Kount or Signifyd catches the stolen credit card at checkout.
-            Your Ethoca or Verifi alerts give you a window to resolve after a
-            dispute is filed with the bank. But in between — when the authorized
-            cardholder changes their mind, or exploits your refund policy, or
-            disputes a legitimate purchase claiming it wasn&apos;t them — you
-            have nothing. No score. No proof. No answer. You guess, or you
-            refund.
-          </p>
-        </div>
-
-        {/* IMG-02 placeholder — Nano Banana Pro in Phase 6 */}
-        <div
-          className="mt-12 rounded-xl bg-white border border-gray-200 p-8 md:p-12 flex items-center justify-center"
-          aria-label="Gap diagram — placeholder for IMG-02"
-        >
-          <div className="grid grid-cols-3 gap-4 w-full max-w-3xl">
-            <div className="rounded-lg border border-gray-200 p-6 text-center">
-              <p className="text-eyebrow text-gray-500">Stage 1</p>
-              <p className="mt-2 font-semibold text-navy">Fraud Prevention</p>
-              <p className="mt-1 text-body-sm text-gray-500">
-                Kount · Signifyd · Stripe Radar
-              </p>
-            </div>
-            <div className="rounded-lg border-2 border-accent bg-accent/5 p-6 text-center">
-              <p className="text-eyebrow text-accent">Gap Zone</p>
-              <p className="mt-2 font-semibold text-navy">Kombatix scores here</p>
-              <p className="mt-1 text-body-sm text-gray-600">
-                PreAuth screening · Defense scoring
-              </p>
-            </div>
-            <div className="rounded-lg border border-gray-200 p-6 text-center">
-              <p className="text-eyebrow text-gray-500">Stage 3</p>
-              <p className="mt-2 font-semibold text-navy">Chargeback Resolution</p>
-              <p className="mt-1 text-body-sm text-gray-500">
-                Ethoca · Verifi · Chargebacks911
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p className="mt-8 text-body-lg text-gray-600 max-w-3xl">
-          Kombatix fills the gap with real-time identity scoring at two critical
-          moments: pre-authorization (PreAuth) screens against a
-          known-fraudster network, and dispute-time (Defense) scores identity
-          against the original transaction and returns a 0–100 composite score
-          you can act on.
-        </p>
       </Section>
 
       {/* 4 — Network Effect (DARK, punch moment) */}
@@ -298,7 +310,7 @@ export default function HomePage() {
           <StatCard
             value="−60%"
             label="Post-Contact Disputes"
-            body="Customers told 'your identity was verified against the original purchase' rarely escalate to their bank. Post-contact dispute volume dropped by 60% in the first 60 days."
+            body="Customers told 'your identity was verified against the original purchase and we will provide this information to your bank in case of a dispute' rarely escalate to their bank. Post-contact dispute volume dropped by 60% in the first 60 days."
           />
           <StatCard
             value="40% → 80%"
@@ -399,9 +411,8 @@ export default function HomePage() {
         </div>
 
         <p className="mt-8 text-body text-gray-600 max-w-3xl">
-          All three products are billed independently. API key and
-          documentation delivered within 4 business hours of signup. Web
-          Portal access is live immediately.
+          API documentation available immediately after signup, and keys can
+          be generated in minutes.
         </p>
 
         <div className="mt-8">
@@ -435,7 +446,7 @@ export default function HomePage() {
       {/* 8 — Footer CTA Band (DARK) */}
       <CtaBand
         headline="Stop guessing. Start scoring."
-        ctaLabel="Create Your Free Account"
+        ctaLabel="Create Your Account"
         ctaHref={SIGNUP_URL}
       />
 

@@ -384,7 +384,7 @@ export default function HowItWorksPage() {
 
       <CtaBand
         headline="The gap in your stack has a product. Two of them."
-        ctaLabel="Sign Up Free"
+        ctaLabel="Sign Up"
         ctaHref={SIGNUP_URL}
       />
     </PageShell>

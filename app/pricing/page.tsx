@@ -148,7 +148,7 @@ export default function PricingPage() {
 
       <CtaBand
         headline="Pick a plan. Be running in 4 business hours."
-        ctaLabel="Start Free"
+        ctaLabel="Get Started"
         ctaHref={SIGNUP_URL}
       />
     </PageShell>
