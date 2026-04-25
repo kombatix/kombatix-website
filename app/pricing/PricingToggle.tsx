@@ -99,7 +99,7 @@ export function PricingToggle() {
             features={[
               "Full three-engine scoring",
               "$0.60 per additional hit",
-              "API key in 4 business hours",
+              "API access live as soon as you subscribe",
               "Self-service portal access",
             ]}
             ctaLabel="Get Started"
@@ -112,7 +112,7 @@ export function PricingToggle() {
             features={[
               "Full three-engine scoring",
               "$0.40 per additional hit",
-              "API key in 4 business hours",
+              "API access live as soon as you subscribe",
               "Self-service portal access",
             ]}
             ctaLabel="Get Started"

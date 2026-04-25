@@ -345,9 +345,9 @@ export default function DefensePage() {
             <p className="mt-4 text-body text-gray-600">
               Full Defense scoring via a single POST endpoint. Integrate into
               your helpdesk (Zendesk, Intercom, Gorgias), CRM, or chargeback
-              workflow. API key and documentation delivered within 4 business
-              hours of signup. Self-service developer portal available
-              immediately.
+              workflow. API access is granted as soon as you subscribe and
+              your first month is paid — keys can be generated in the
+              developer portal in minutes.
             </p>
             <div className="mt-6">
               <Link

@@ -77,7 +77,8 @@ Every Kombatix Defense scoring (whether via API or Web Portal) that returns a co
 
 - REST API — JSON in, JSON out, sub-second response (Defense and PreAuth)
 - Web Portal Access — separately-priced browser-based interface to Defense scoring, no developer required
-- API keys and developer documentation delivered within 4 business hours of API signup
+- API access is granted as soon as you subscribe and your first month is paid; keys can be generated in minutes
+- Developer documentation is live immediately on signup
 - Web Portal access is live immediately on signup
 - Self-service developer portal available immediately
 - Sandbox environment for API integration testing

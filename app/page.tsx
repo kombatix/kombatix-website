@@ -446,7 +446,7 @@ export default function HomePage() {
       {/* 8 — Footer CTA Band (DARK) */}
       <CtaBand
         headline="Stop guessing. Start scoring."
-        ctaLabel="Create Your Account"
+        ctaLabel="Get Instant Access"
         ctaHref={SIGNUP_URL}
       />
 

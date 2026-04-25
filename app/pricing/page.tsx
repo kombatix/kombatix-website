@@ -32,7 +32,7 @@ const FAQS: Array<{ question: string; answer: string; detail?: string }> = [
   {
     question: "Is there a free trial?",
     answer:
-      "Not at this time. Sign up for any Standard or Starter plan and be running API calls within 4 business hours.",
+      "Not at this time. Subscribe to any Standard or Starter plan and be running API calls within minutes — access is granted as soon as your first month is paid.",
     detail: "Upgrade or cancel anytime — no long-term contract.",
   },
   {
@@ -114,9 +114,10 @@ export default function PricingPage() {
               Transparent pricing for both products.
             </h1>
             <p className="mt-6 text-body-lg text-white/72">
-              Pay for what moves the needle. PreAuth starts at $49/month;
-              Defense starts at $75/month. Both include full self-service
-              onboarding and live API access within 4 business hours.
+              Pay for what moves the needle. PreAuth starts at $49/month,
+              Defense at $75/month, and Web Portal Access at $35/month.
+              All three are self-service — subscribe and your access is
+              live the moment your first month is paid.
             </p>
           </div>
         </div>
@@ -147,8 +148,8 @@ export default function PricingPage() {
       </Section>
 
       <CtaBand
-        headline="Pick a plan. Be running in 4 business hours."
-        ctaLabel="Get Started"
+        headline="Pick a plan. Be running in minutes."
+        ctaLabel="Get Instant Access"
         ctaHref={SIGNUP_URL}
       />
     </PageShell>

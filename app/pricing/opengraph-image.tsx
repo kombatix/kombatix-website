@@ -6,8 +6,8 @@ export const contentType = "image/png";
 
 export default async function PricingOg() {
   return ogImage({
-    headline: "Transparent pricing for both products.",
-    subtext: "No long-term contract. Start running in 4 business hours.",
+    headline: "Transparent pricing across all three products.",
+    subtext: "No long-term contract. Instant access on signup.",
     accentElement: "pricing",
   });
 }

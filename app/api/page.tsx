@@ -26,12 +26,12 @@ const SIGNUP_URL = "https://app.kombatix.ai/signup";
 export const metadata: Metadata = {
   title: "Kombatix API — REST Identity Scoring for Developers",
   description:
-    "Score identity in a single POST. JSON in, JSON out, sub-second response. API keys delivered within 4 business hours.",
+    "Score identity in a single POST. JSON in, JSON out, sub-second response. API access the moment your subscription is active.",
   alternates: { canonical: "/api" },
   openGraph: {
     title: "Kombatix API — REST Identity Scoring for Developers",
     description:
-      "Score identity in a single POST. JSON in, JSON out, sub-second response. API keys delivered within 4 business hours.",
+      "Score identity in a single POST. JSON in, JSON out, sub-second response. API access the moment your subscription is active.",
     url: "https://kombatix.io/api",
   },
 };
@@ -162,8 +162,9 @@ export default function ApiPage() {
             <h1 className="text-hero mt-3">Score identity in a single POST.</h1>
             <p className="mt-6 text-body-lg text-white/72">
               Kombatix is REST-first. JSON in, JSON out, sub-second response.
-              API keys and full developer documentation delivered within 4
-              business hours of signup — the self-service portal is live now.
+              API access is granted the moment you subscribe and your first
+              month is paid — keys are generated in the developer portal in
+              minutes.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Button href={SIGNUP_URL} variant="primary" size="lg">
@@ -361,8 +362,8 @@ export default function ApiPage() {
             <p className="mt-4 text-body text-gray-600">
               Complete endpoint documentation, error codes, response schemas,
               SDKs, and integration guides are inside the developer portal.
-              Sign up to access — API keys and docs delivered within 4
-              business hours.
+              Subscribe and pay your first month — keys can be generated in
+              minutes and the docs are live immediately.
             </p>
             <div className="mt-6">
               <Button href={SIGNUP_URL} variant="primary">
@@ -388,8 +389,8 @@ export default function ApiPage() {
       </Section>
 
       <CtaBand
-        headline="From signup to first scored request in 4 business hours."
-        ctaLabel="Sign Up"
+        headline="From signup to first scored request in minutes."
+        ctaLabel="Get Instant Access"
         ctaHref={SIGNUP_URL}
       />
     </PageShell>
