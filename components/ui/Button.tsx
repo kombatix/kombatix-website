@@ -12,19 +12,28 @@ interface BaseProps {
   children: ReactNode;
 }
 
+// Shared by all non-link variants — keeps text + icon on one line,
+// vertically centered, with consistent gap. inline-flex prevents the
+// button from being stretched by a flex parent's align-items: stretch
+// default. whitespace-nowrap stops the label from wrapping when the
+// container is narrow (causes the awkward "two-line clipped" look).
+const flexBase =
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap";
+
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-accent text-white font-semibold hover:bg-accent-hover transition-colors " +
+    `${flexBase} bg-accent text-white font-semibold hover:bg-accent-hover transition-colors ` +
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-navy",
   "ghost-dark":
-    "border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors " +
+    `${flexBase} border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors ` +
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-navy",
   "ghost-light":
-    "border border-gray-200 text-navy font-semibold hover:bg-gray-50 transition-colors " +
+    `${flexBase} border border-gray-200 text-navy font-semibold hover:bg-gray-50 transition-colors ` +
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
-  link: "text-accent font-semibold inline-flex items-center gap-1 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded",
+  link:
+    "inline-flex items-center gap-1 text-accent font-semibold hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded",
   punch:
-    "bg-accent text-white font-semibold shadow-accent-glow hover:shadow-accent-glow-strong transition-shadow " +
+    `${flexBase} bg-accent text-white font-semibold shadow-accent-glow hover:shadow-accent-glow-strong transition-shadow ` +
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-navy",
 };
 
