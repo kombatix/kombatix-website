@@ -330,35 +330,52 @@ export default function HowItWorksPage() {
         <div className="max-w-3xl">
           <EyebrowTag tone="light">Access Methods</EyebrowTag>
           <h2 className="text-display text-navy mt-3">
-            REST API or no-code Web Application.
+            Three independent subscriptions.
           </h2>
+          <p className="mt-6 text-body-lg text-gray-600">
+            Kombatix sells access to scoring three ways. Pick the products
+            your team actually uses — they&apos;re all billed independently.
+          </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <Card tone="light">
-            <h3 className="text-h2 text-navy">REST API</h3>
-            <p className="mt-4 text-body text-gray-600">
-              Integrate Defense and PreAuth directly into your CRM, helpdesk,
-              checkout, or chargeback workflow. Full REST API with JSON
-              request/response. API key and documentation within 4 business
-              hours of signup.
+            <h3 className="text-h3 text-navy">Defense API</h3>
+            <p className="mt-2 text-body-sm text-gray-500">From $75/month</p>
+            <p className="mt-3 text-body text-gray-600">
+              REST endpoint for engineering integrations. Embed Defense
+              scoring in your CRM, helpdesk, or chargeback workflow.
             </p>
             <div className="mt-6">
-              <Button href="/api" variant="primary">
-                See API Details <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              <Button href="/api" variant="primary" size="sm">
+                Defense API <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Button>
             </div>
           </Card>
           <Card tone="light">
-            <h3 className="text-h2 text-navy">Web Application</h3>
-            <p className="mt-4 text-body text-gray-600">
-              No-code access via browser. Log in, paste dispute data, get a
-              Defense score instantly, copy the report into your ticket or
-              evidence package. No developer required.
+            <h3 className="text-h3 text-navy">PreAuth API</h3>
+            <p className="mt-2 text-body-sm text-gray-500">From $49/month</p>
+            <p className="mt-3 text-body text-gray-600">
+              REST endpoint for pre-authorization screening against the
+              Kombatix Network. API-only — not available in the portal.
             </p>
             <div className="mt-6">
-              <Button href={SIGNUP_URL} variant="primary">
-                Sign Up Free <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              <Button href="/preauth" variant="primary" size="sm">
+                PreAuth API <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Button>
+            </div>
+          </Card>
+          <Card tone="light">
+            <h3 className="text-h3 text-navy">Web Portal Access</h3>
+            <p className="mt-2 text-body-sm text-gray-500">From $35/month</p>
+            <p className="mt-3 text-body text-gray-600">
+              No-code Defense scoring in your browser. Built for support and
+              CX teams without engineering capacity. PDF export, AI insights,
+              searchable history.
+            </p>
+            <div className="mt-6">
+              <Button href="/web-portal" variant="primary" size="sm">
+                Web Portal <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Button>
             </div>
           </Card>

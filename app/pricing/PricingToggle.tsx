@@ -16,7 +16,17 @@ import {
 
 const SIGNUP_URL = "https://app.kombatix.ai/signup";
 
-type Product = "defense" | "preauth";
+type Product = "defense" | "preauth" | "web-portal";
+
+const TABS: Array<{ id: Product; label: string; sublabel: string }> = [
+  { id: "defense",    label: "Defense",            sublabel: "API · from $75/mo" },
+  { id: "preauth",    label: "PreAuth",            sublabel: "API · from $49/mo" },
+  { id: "web-portal", label: "Web Portal Access",  sublabel: "No-code · from $35/mo" },
+];
+
+function isProduct(s: string): s is Product {
+  return s === "defense" || s === "preauth" || s === "web-portal";
+}
 
 export function PricingToggle() {
   // Derive default tab from URL hash on mount; fall back to "defense".
@@ -25,7 +35,7 @@ export function PricingToggle() {
   useEffect(() => {
     const syncFromHash = () => {
       const hash = window.location.hash.replace("#", "");
-      if (hash === "preauth" || hash === "defense") setTab(hash);
+      if (isProduct(hash)) setTab(hash);
     };
     syncFromHash();
     window.addEventListener("hashchange", syncFromHash);
@@ -40,40 +50,37 @@ export function PricingToggle() {
 
   return (
     <div>
-      {/* Toggle */}
+      {/* Toggle — 3 tabs, wraps gracefully on narrow viewports */}
       <div
         role="tablist"
         aria-label="Product pricing"
-        className="inline-flex rounded-xl border border-gray-200 bg-white p-1"
+        className="inline-flex flex-wrap gap-1 rounded-xl border border-gray-200 bg-white p-1"
       >
-        <button
-          role="tab"
-          aria-selected={tab === "defense"}
-          aria-controls="defense-panel"
-          id="defense-tab"
-          onClick={() => handleTabClick("defense")}
-          className={cn(
-            "px-6 py-2.5 rounded-lg text-body font-semibold transition-colors",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
-            tab === "defense" ? "bg-accent text-white" : "text-navy hover:bg-gray-50",
-          )}
-        >
-          Kombatix Defense
-        </button>
-        <button
-          role="tab"
-          aria-selected={tab === "preauth"}
-          aria-controls="preauth-panel"
-          id="preauth-tab"
-          onClick={() => handleTabClick("preauth")}
-          className={cn(
-            "px-6 py-2.5 rounded-lg text-body font-semibold transition-colors",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
-            tab === "preauth" ? "bg-accent text-white" : "text-navy hover:bg-gray-50",
-          )}
-        >
-          Kombatix PreAuth
-        </button>
+        {TABS.map((t) => (
+          <button
+            key={t.id}
+            role="tab"
+            aria-selected={tab === t.id}
+            aria-controls={`${t.id}-panel`}
+            id={`${t.id}-tab`}
+            onClick={() => handleTabClick(t.id)}
+            className={cn(
+              "px-5 py-2.5 rounded-lg text-body font-semibold transition-colors text-left",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+              tab === t.id ? "bg-accent text-white" : "text-navy hover:bg-gray-50",
+            )}
+          >
+            <span className="block leading-tight">Kombatix {t.label}</span>
+            <span
+              className={cn(
+                "block text-body-sm font-normal mt-0.5",
+                tab === t.id ? "text-white/80" : "text-gray-500",
+              )}
+            >
+              {t.sublabel}
+            </span>
+          </button>
+        ))}
       </div>
 
       {/* Defense panel */}
@@ -262,6 +269,90 @@ export function PricingToggle() {
             onboarding.
           </p>
         </div>
+      </div>
+
+      {/* Web Portal panel */}
+      <div
+        id="web-portal-panel"
+        role="tabpanel"
+        aria-labelledby="web-portal-tab"
+        hidden={tab !== "web-portal"}
+        className="mt-12"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+          <PricingCard
+            planName="Web Portal · Standard"
+            price="35"
+            priceSuffix="/month"
+            intro="Up to 10 reports/month included"
+            features={[
+              "Full three-engine Defense scoring",
+              "$3 per additional actionable report (60+)",
+              "PDF export with AI Defense Narrative",
+              "Searchable report history",
+              "Multi-user team logins",
+              "No setup fee",
+            ]}
+            ctaLabel="Start Standard"
+            ctaHref={SIGNUP_URL}
+          />
+          <PricingCard
+            planName="Web Portal · Pro"
+            price="250"
+            priceSuffix="/month"
+            intro="Up to 100 reports/month included"
+            features={[
+              "Everything in Standard",
+              "$2 per additional actionable report (60+)",
+              "Higher daily search rate limits",
+              "Priority support response",
+            ]}
+            ctaLabel="Start Pro"
+            ctaHref={SIGNUP_URL}
+            recommended
+          />
+          <PricingCard
+            planName="Web Portal · Enterprise"
+            price="Contact Us"
+            intro="High-volume, multi-team, custom fit"
+            features={[
+              "Custom report allocation",
+              "Multi-team account hierarchy",
+              "SSO / SAML available",
+              "Dedicated success contact",
+            ]}
+            ctaLabel="Contact Sales"
+            ctaHref="mailto:operations@kombatix.io?subject=Web%20Portal%20Enterprise%20Inquiry"
+          />
+        </div>
+
+        <div className="mt-12 rounded-xl bg-off-white border border-gray-200 p-8 md:p-12">
+          <h3 className="text-h2 text-navy">
+            Web Portal Access is separate from the Defense API.
+          </h3>
+          <p className="mt-4 text-body-lg text-gray-600 max-w-3xl">
+            Web Portal subscriptions are billed independently of Defense API
+            subscriptions. Most teams pick one based on how their staff
+            works — support and CX teams often start with the portal; teams
+            with engineering capacity start with the API. Some run both
+            side-by-side.
+          </p>
+          <div className="mt-6">
+            <a
+              href="/web-portal"
+              className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
+            >
+              Learn more about Web Portal Access →
+            </a>
+          </div>
+        </div>
+
+        <p className="mt-8 text-body-sm text-gray-500 max-w-3xl">
+          &quot;Reports&quot; on Web Portal are equivalent to &quot;hits&quot;
+          on the API — one Defense Search returns one report. We bill for
+          searches that return a Defense Score of 60 or higher, matching the
+          API&apos;s &quot;pay for actionable results&quot; threshold.
+        </p>
       </div>
     </div>
   );

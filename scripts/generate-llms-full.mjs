@@ -31,6 +31,7 @@ const ROUTES = [
   { route: "/",              file: "index.html" },
   { route: "/defense",       file: "defense.html" },
   { route: "/preauth",       file: "preauth.html" },
+  { route: "/web-portal",    file: "web-portal.html" },
   { route: "/how-it-works",  file: "how-it-works.html" },
   { route: "/pricing",       file: "pricing.html" },
   { route: "/partners",      file: "partners.html" },

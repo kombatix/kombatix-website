@@ -1,22 +1,22 @@
 # Kombatix
 
-> Real-time identity scoring for friendly fraud defense and pre-authorization fraud screening. Two products built on a shared identity graph that strengthens every merchant in the network.
+> Real-time identity scoring for friendly fraud defense and pre-authorization fraud screening. Three products built on a shared identity graph that strengthens every merchant in the network.
 
 Kombatix is a B2B SaaS platform that helps merchants fight friendly fraud — cases where authorized cardholders dispute their own legitimate purchases to obtain refunds without returning goods or canceling services. It sits in the gap between upstream fraud prevention (Kount, Signifyd, Stripe Radar) and downstream chargeback resolution (Ethoca, Verifi, Chargebacks911), scoring identity at two critical moments: pre-authorization and dispute.
 
 ## Products
 
-### Kombatix Defense — Dispute-Time Scoring
+### Kombatix Defense — Dispute-Time Scoring (API)
 
 When a customer disputes a charge, Kombatix Defense scores the disputing identity against the original transaction in milliseconds.
 
 - Three scoring engines running in parallel: Identity Match, Identity Risk, Behavioral Risk
 - Composite 0-100 Defense Score with AI-generated evidence narrative
 - Field-level identity match breakdown (name, email, phone, billing, shipping)
-- REST API with sub-second response, and a no-code web application
+- REST API with sub-second response
 - Use at first contact to deflect refund abuse; use at representment to win chargebacks
 
-### Kombatix PreAuth — Pre-Authorization Screening
+### Kombatix PreAuth — Pre-Authorization Screening (API)
 
 Before authorization completes, Kombatix PreAuth checks the transaction against the Kombatix Network — the growing database of identities confirmed as friendly fraud by other merchants.
 
@@ -25,22 +25,41 @@ Before authorization completes, Kombatix PreAuth checks the transaction against 
 - Complements, does not replace, upstream fraud prevention stacks
 - Use at checkout, subscription renewal, or any authorization event
 
+### Kombatix Web Portal Access — No-Code Defense Scoring
+
+Web Portal Access is the no-code path to Defense scoring. Support and CX teams log into a browser-based portal, paste dispute details, and get a full Defense Report in seconds — no developer required.
+
+- Browser-only interface to the same three-engine Defense scoring used by the API
+- Full reports with composite score, sub-scores, reason codes, identity match breakdown, and AI Defense Narrative
+- PDF export for representment packages and ticket attachments
+- Searchable history of every Defense Search the team has ever run
+- Multi-user team logins
+- Subscribed independently from the Defense API; teams can run one, the other, or both
+
 ## The Kombatix Network
 
-Every Kombatix Defense customer scoring friendly fraud (composite score 60+) contributes the confirmed identity to the Kombatix Network. Every PreAuth customer screens against the network. The more merchants participating, the more friendly fraudsters caught at pre-authorization before transactions complete. The network compounds with every customer.
+Every Kombatix Defense scoring (whether via API or Web Portal) that returns a composite score of 60+ contributes the confirmed friendly-fraud identity to the Kombatix Network. Every PreAuth customer screens against the network. The more merchants participating, the more friendly fraudsters caught at pre-authorization before transactions complete. The network compounds with every customer.
 
 ## Pricing
 
-### Kombatix Defense
+### Kombatix Defense (API)
 - Standard: $75/month — 75 Defense hits included; $0.60 per additional hit
 - Advanced: $500/month — 1,000 Defense hits included; $0.40 per additional hit
 - Enterprise: custom pricing — 50,000+ calls/month, dedicated product specialist, SLA
+- No setup fee
 
-### Kombatix PreAuth
+### Kombatix PreAuth (API)
 - Starter: $49/month — ~25K transactions; $0.005 no-hit, $0.15 hit; $49 monthly credit
 - Growth: $149/month (recommended) — 25K–100K transactions; $0.005 no-hit, $0.10 hit; $149 monthly credit
 - Enterprise: $499/month — 100K+ transactions; $0.005 no-hit, $0.05 hit; $499 monthly credit
 - One-time $250 implementation fee applies to all PreAuth tiers
+
+### Kombatix Web Portal Access
+- Standard: $35/month — 10 reports included; $3 per additional actionable report (60+)
+- Pro: $250/month — 100 reports included; $2 per additional actionable report (60+)
+- Enterprise: contact for custom report allocation, multi-team account hierarchy, SSO/SAML, dedicated success contact
+- Reports billed only for scores ≥ 60 (matching API "pay for actionable results" threshold)
+- No setup fee
 
 ## Who Kombatix Is For
 
@@ -54,13 +73,14 @@ Every Kombatix Defense customer scoring friendly fraud (composite score 60+) con
 - True fraud prevention at checkout (use Kount, Signifyd, Stripe Radar upstream)
 - Chargeback alert resolution in the pre-dispute window (use Ethoca, Verifi — Kombatix complements these tools)
 
-## Integration
+## Integration / Access
 
-- REST API — JSON in, JSON out, sub-second response
-- Web application for no-code use by support teams
-- API keys and full developer documentation delivered within 4 business hours of signup
+- REST API — JSON in, JSON out, sub-second response (Defense and PreAuth)
+- Web Portal Access — separately-priced browser-based interface to Defense scoring, no developer required
+- API keys and developer documentation delivered within 4 business hours of API signup
+- Web Portal access is live immediately on signup
 - Self-service developer portal available immediately
-- Sandbox environment for integration testing
+- Sandbox environment for API integration testing
 
 ## Proven Results
 
@@ -77,6 +97,7 @@ A leading digital subscription company with 500+ daily paying subscribers reduce
 - Home: https://kombatix.io
 - Kombatix Defense: https://kombatix.io/defense
 - Kombatix PreAuth: https://kombatix.io/preauth
+- Kombatix Web Portal Access: https://kombatix.io/web-portal
 - How It Works: https://kombatix.io/how-it-works
 - Pricing: https://kombatix.io/pricing
 - Partners: https://kombatix.io/partners

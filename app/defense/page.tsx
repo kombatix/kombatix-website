@@ -327,13 +327,21 @@ export default function DefensePage() {
         <div className="max-w-3xl">
           <EyebrowTag tone="light">How You Access It</EyebrowTag>
           <h2 className="text-display text-navy mt-3">
-            REST API or no-code Web App.
+            Defense API or Web Portal Access — independent subscriptions.
           </h2>
+          <p className="mt-6 text-body-lg text-gray-600">
+            Defense scoring is available two ways, sold separately. Pick one
+            or run both side-by-side — most teams start with one and add the
+            other later.
+          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <Card tone="light">
-            <h3 className="text-h2 text-navy">REST API</h3>
+            <h3 className="text-h2 text-navy">Defense API</h3>
+            <p className="mt-2 text-body-sm text-gray-500">
+              From $75/month · for engineering integrations
+            </p>
             <p className="mt-4 text-body text-gray-600">
               Full Defense scoring via a single POST endpoint. Integrate into
               your helpdesk (Zendesk, Intercom, Gorgias), CRM, or chargeback
@@ -351,19 +359,24 @@ export default function DefensePage() {
             </div>
           </Card>
           <Card tone="light">
-            <h3 className="text-h2 text-navy">Web Application</h3>
+            <h3 className="text-h2 text-navy">Web Portal Access</h3>
+            <p className="mt-2 text-body-sm text-gray-500">
+              From $35/month · for support &amp; CX teams (no-code)
+            </p>
             <p className="mt-4 text-body text-gray-600">
-              No-code access via browser. Agents log into the Kombatix portal,
-              paste dispute details, run a Defense Search, copy the result
-              directly into their ticket or evidence package. No developer time
-              required to get value on day one.
+              No-code access via browser. Your team logs into the Kombatix
+              Web Portal, pastes dispute details, runs a Defense Search, and
+              gets a full report — composite score, AI Defense Narrative,
+              identity match breakdown, exportable PDF, and searchable
+              history. Separate subscription from the Defense API.
             </p>
             <div className="mt-6">
               <Link
-                href={SIGNUP_URL}
+                href="/web-portal"
                 className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
               >
-                Sign Up <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                See Web Portal details{" "}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </Card>

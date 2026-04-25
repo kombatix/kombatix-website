@@ -27,12 +27,12 @@ const SIGNUP_URL = "https://app.kombatix.ai/signup";
 export const metadata: Metadata = {
   title: "Kombatix — Identity Scoring for Friendly Fraud Defense",
   description:
-    "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Two products, one network. Start free.",
+    "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Start free.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Kombatix — Identity Scoring for Friendly Fraud Defense",
     description:
-      "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Two products, one network. Start free.",
+      "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Start free.",
     url: "https://kombatix.io/",
   },
 };
@@ -317,11 +317,11 @@ export default function HomePage() {
         <div className="max-w-3xl">
           <EyebrowTag tone="light">Pricing</EyebrowTag>
           <h2 className="text-display text-navy mt-3">
-            Two products. Transparent pricing. No long-term contracts.
+            Three products. Transparent pricing. No long-term contracts.
           </h2>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <Card tone="light">
             <p className="text-eyebrow text-teal uppercase tracking-[0.1em] font-bold">
               Kombatix PreAuth
@@ -330,6 +330,7 @@ export default function HomePage() {
               from <span className="text-accent">$49</span>
               <span className="text-body text-gray-500">/month</span>
             </p>
+            <p className="mt-1 text-body-sm text-gray-500">API · pre-auth screening</p>
             <ul className="mt-6 space-y-2 text-body text-gray-600">
               <li>• Screen every transaction against the Kombatix Network</li>
               <li>• Sub-cent no-hit checks</li>
@@ -340,7 +341,8 @@ export default function HomePage() {
                 href="/pricing#preauth"
                 className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
               >
-                View PreAuth Pricing <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                View PreAuth Pricing{" "}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </Card>
@@ -353,6 +355,7 @@ export default function HomePage() {
               from <span className="text-accent">$75</span>
               <span className="text-body text-gray-500">/month</span>
             </p>
+            <p className="mt-1 text-body-sm text-gray-500">API · dispute scoring</p>
             <ul className="mt-6 space-y-2 text-body text-gray-600">
               <li>• Three-engine composite identity scoring</li>
               <li>• AI-generated defense narrative</li>
@@ -363,15 +366,42 @@ export default function HomePage() {
                 href="/pricing#defense"
                 className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
               >
-                View Defense Pricing <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                View Defense Pricing{" "}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </Card>
+
+          <Card tone="light">
+            <p className="text-eyebrow text-teal uppercase tracking-[0.1em] font-bold">
+              Web Portal Access
+            </p>
+            <p className="mt-3 text-display text-navy font-bold">
+              from <span className="text-accent">$35</span>
+              <span className="text-body text-gray-500">/month</span>
+            </p>
+            <p className="mt-1 text-body-sm text-gray-500">No-code · Defense scoring</p>
+            <ul className="mt-6 space-y-2 text-body text-gray-600">
+              <li>• Browser-only access for support and CX teams</li>
+              <li>• PDF export with AI insights</li>
+              <li>• Searchable report history</li>
+            </ul>
+            <div className="mt-6">
+              <Link
+                href="/pricing#web-portal"
+                className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
+              >
+                View Web Portal Pricing{" "}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </Card>
         </div>
 
         <p className="mt-8 text-body text-gray-600 max-w-3xl">
-          API key and documentation delivered within 4 business hours of
-          signup. Self-service developer portal available immediately.
+          All three products are billed independently. API key and
+          documentation delivered within 4 business hours of signup. Web
+          Portal access is live immediately.
         </p>
 
         <div className="mt-8">

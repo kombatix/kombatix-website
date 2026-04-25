@@ -29,13 +29,18 @@ const NAV_ITEMS: { label: string; href: string }[] = [
 const PRODUCTS = [
   {
     label: "Defense",
-    description: "Dispute-time identity scoring",
+    description: "Dispute-time identity scoring (API)",
     href: "/defense",
   },
   {
     label: "PreAuth",
-    description: "Pre-authorization network check",
+    description: "Pre-authorization network check (API)",
     href: "/preauth",
+  },
+  {
+    label: "Web Portal Access",
+    description: "No-code Defense scoring in your browser",
+    href: "/web-portal",
   },
 ];
 

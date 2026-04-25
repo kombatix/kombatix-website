@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/`,              lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
     { url: `${SITE}/defense`,       lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
     { url: `${SITE}/preauth`,       lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${SITE}/web-portal`,    lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
     { url: `${SITE}/how-it-works`,  lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/pricing`,       lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE}/partners`,      lastModified: now, changeFrequency: "monthly", priority: 0.7 },

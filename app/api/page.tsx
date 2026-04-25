@@ -353,22 +353,38 @@ export default function ApiPage() {
         </div>
       </Section>
 
-      {/* 7 — Full Documentation CTA (LIGHT) */}
+      {/* 7 — Full Documentation CTA + Web Portal alternative (LIGHT) */}
       <Section tone="light" spacing="default">
-        <Card tone="light" className="max-w-3xl">
-          <h3 className="text-h2 text-navy">Full developer documentation is behind login.</h3>
-          <p className="mt-4 text-body text-gray-600">
-            Complete endpoint documentation, error codes, response schemas,
-            SDKs, and integration guides are inside the developer portal. Sign
-            up to access — API keys and docs delivered within 4 business
-            hours.
-          </p>
-          <div className="mt-6">
-            <Button href={SIGNUP_URL} variant="primary">
-              Sign Up <ArrowRight className="w-4 h-4" aria-hidden="true" />
-            </Button>
-          </div>
-        </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Card tone="light">
+            <h3 className="text-h2 text-navy">Full developer documentation is behind login.</h3>
+            <p className="mt-4 text-body text-gray-600">
+              Complete endpoint documentation, error codes, response schemas,
+              SDKs, and integration guides are inside the developer portal.
+              Sign up to access — API keys and docs delivered within 4
+              business hours.
+            </p>
+            <div className="mt-6">
+              <Button href={SIGNUP_URL} variant="primary">
+                Sign Up <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Button>
+            </div>
+          </Card>
+          <Card tone="light">
+            <h3 className="text-h2 text-navy">No engineering capacity? Use the Web Portal.</h3>
+            <p className="mt-4 text-body text-gray-600">
+              Web Portal Access is the no-code path to Defense scoring —
+              browser-only, no integration required. Same scoring engine,
+              full reports with AI insights, PDF export, searchable history.
+              Subscribe separately from the API.
+            </p>
+            <div className="mt-6">
+              <Button href="/web-portal" variant="ghost-light">
+                See Web Portal <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Button>
+            </div>
+          </Card>
+        </div>
       </Section>
 
       <CtaBand

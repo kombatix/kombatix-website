@@ -18,6 +18,7 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "Defense", href: "/defense" },
       { label: "PreAuth", href: "/preauth" },
+      { label: "Web Portal", href: "/web-portal" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
       { label: "API", href: "/api" },
