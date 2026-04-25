@@ -8,7 +8,10 @@ type Variant = ComponentProps<typeof Button>["variant"];
 type Size = ComponentProps<typeof Button>["size"];
 
 interface SignupButtonProps {
-  event: Extract<GA4Event, "signup_click_defense" | "signup_click_preauth">;
+  event: Extract<
+    GA4Event,
+    "signup_click_defense" | "signup_click_preauth" | "signup_click_web_portal"
+  >;
   href?: string; // default https://app.kombatix.ai/signup
   variant?: Variant;
   size?: Size;

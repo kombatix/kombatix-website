@@ -27,12 +27,12 @@ const SIGNUP_URL = "https://app.kombatix.ai/signup";
 export const metadata: Metadata = {
   title: "How Kombatix Works — Scoring Methodology Explained",
   description:
-    "Two products, three scoring engines, one composite score. Learn how Kombatix fights friendly fraud at every stage of the lifecycle.",
+    "Three products, three Defense scoring engines, one composite score. Learn how Kombatix fights friendly fraud at every stage of the lifecycle.",
   alternates: { canonical: "/how-it-works" },
   openGraph: {
     title: "How Kombatix Works — Scoring Methodology Explained",
     description:
-      "Two products, three scoring engines, one composite score. Learn how Kombatix fights friendly fraud at every stage of the lifecycle.",
+      "Three products, three Defense scoring engines, one composite score. Learn how Kombatix fights friendly fraud at every stage of the lifecycle.",
     url: "https://kombatix.io/how-it-works",
   },
 };
@@ -383,8 +383,8 @@ export default function HowItWorksPage() {
       </Section>
 
       <CtaBand
-        headline="The gap in your stack has a product. Two of them."
-        ctaLabel="Sign Up"
+        headline="The gap in your stack has a product. Three of them."
+        ctaLabel="Get Instant Access"
         ctaHref={SIGNUP_URL}
       />
     </PageShell>

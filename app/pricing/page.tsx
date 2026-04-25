@@ -14,14 +14,14 @@ import { TrackPageView } from "@/components/analytics/TrackPageView";
 const SIGNUP_URL = "https://app.kombatix.ai/signup";
 
 export const metadata: Metadata = {
-  title: "Pricing — Kombatix Defense and PreAuth Plans",
+  title: "Pricing — Defense, PreAuth, and Web Portal Access",
   description:
-    "Transparent pricing: PreAuth from $49/mo, Defense from $75/mo. Full three-engine scoring. No long-term contract.",
+    "Transparent pricing across three products: PreAuth from $49/mo, Defense from $75/mo, Web Portal from $35/mo. No long-term contract.",
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: "Pricing — Kombatix Defense and PreAuth Plans",
+    title: "Pricing — Defense, PreAuth, and Web Portal Access",
     description:
-      "Transparent pricing: PreAuth from $49/mo, Defense from $75/mo. Full three-engine scoring. No long-term contract.",
+      "Transparent pricing across three products: PreAuth from $49/mo, Defense from $75/mo, Web Portal from $35/mo. No long-term contract.",
     url: "https://kombatix.io/pricing",
   },
 };
@@ -50,9 +50,16 @@ const FAQS: Array<{ question: string; answer: string; detail?: string }> = [
   {
     question: "Can I use Kombatix with my existing support and fraud tools?",
     answer:
-      "Yes. Kombatix returns structured JSON via REST API and integrates with any CRM, helpdesk, or fraud platform.",
+      "Yes. The Defense and PreAuth APIs return structured JSON over REST and integrate with any CRM, helpdesk, or fraud platform.",
     detail:
-      "For no-code use, the web application allows copy-paste of results into existing tickets. PreAuth sits upstream of your existing fraud stack and complements rather than replaces it.",
+      "If your team doesn't have engineering capacity, Web Portal Access exposes the same Defense scoring through a browser-based UI — paste dispute details, get a full report, copy or export results into your existing ticketing system. PreAuth sits upstream of your existing fraud stack and complements rather than replaces it.",
+  },
+  {
+    question: "What's the difference between the Defense API and Web Portal Access?",
+    answer:
+      "The Defense API and Web Portal Access run the same three-engine Defense scoring; the API is for engineering integrations and the Web Portal is no-code for support and CX teams.",
+    detail:
+      "They are billed as independent subscriptions — pick one, the other, or both. Most teams without developer capacity start with Web Portal Access ($35/month) and add the API later when they're ready to automate.",
   },
   {
     question: "What if I need more than 50,000 Defense calls per month?",
@@ -67,16 +74,16 @@ const FAQS: Array<{ question: string; answer: string; detail?: string }> = [
       "See our Privacy Policy for full data handling details, including opt-outs and data retention.",
   },
   {
-    question: "Can I use both Defense and PreAuth?",
+    question: "Can I subscribe to multiple Kombatix products?",
     answer:
-      "Yes — most customers use both. Defense and PreAuth share infrastructure and billing.",
+      "Yes. Defense, PreAuth, and Web Portal Access are billed independently — most customers run two or all three side-by-side.",
     detail:
-      "Using both also strengthens the Kombatix Network, which improves outcomes for all customers.",
+      "Defense scoring (whether via API or Web Portal) feeds the Kombatix Network with every confirmed friendly-fraud identity (60+ score). Every PreAuth customer screens against that network. Running multiple products strengthens the network for everyone.",
   },
   {
     question: "Is there a setup fee?",
     answer:
-      "Defense has no setup fee. PreAuth has a one-time $250 implementation fee that covers the pre-authorization workflow integration.",
+      "Defense API and Web Portal Access have no setup fee. PreAuth has a one-time $250 implementation fee that covers the pre-authorization workflow integration.",
   },
 ];
 
@@ -111,7 +118,7 @@ export default function PricingPage() {
           <div className="max-w-3xl">
             <EyebrowTag>Pricing</EyebrowTag>
             <h1 className="text-hero mt-3">
-              Transparent pricing for both products.
+              Transparent pricing across all three products.
             </h1>
             <p className="mt-6 text-body-lg text-white/72">
               Pay for what moves the needle. PreAuth starts at $49/month,

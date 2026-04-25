@@ -20,9 +20,11 @@ declare global {
 export type GA4Event =
   | "signup_click_defense"
   | "signup_click_preauth"
+  | "signup_click_web_portal"
   | "partner_form_submit"
   | "pricing_view"
   | "api_page_view"
+  | "web_portal_page_view"
   | "how_it_works_scroll_50"
   | "how_it_works_scroll_100";
 

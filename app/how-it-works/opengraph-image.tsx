@@ -7,7 +7,7 @@ export const contentType = "image/png";
 export default async function HowItWorksOg() {
   return ogImage({
     headline: "Identity scoring at every stage of the fraud lifecycle.",
-    subtext: "Two products, three engines, one composite score.",
+    subtext: "Three products, three engines, one composite score.",
     accentElement: "score-dial",
   });
 }

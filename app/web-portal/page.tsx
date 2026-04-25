@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/Table";
 
 import { ScoreDial } from "@/components/score-dial/ScoreDial";
+import { SignupButton } from "@/components/analytics/SignupButton";
+import { TrackPageView } from "@/components/analytics/TrackPageView";
 
 import {
   softwareApplicationSchema,
@@ -44,6 +46,7 @@ export const metadata: Metadata = {
 export default function WebPortalPage() {
   return (
     <PageShell>
+      <TrackPageView event="web_portal_page_view" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLd(
@@ -84,10 +87,10 @@ export default function WebPortalPage() {
                 seconds. No developer required, no integration needed.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Button href={SIGNUP_URL} variant="primary" size="lg">
-                  Start in the Web Portal{" "}
+                <SignupButton event="signup_click_web_portal" href={SIGNUP_URL}>
+                  Get Instant Access{" "}
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </Button>
+                </SignupButton>
                 <Button href="#pricing" variant="ghost-dark" size="lg">
                   See Web Portal Pricing
                 </Button>
@@ -167,8 +170,8 @@ export default function WebPortalPage() {
           <Card tone="light">
             <h3 className="text-h3 text-navy">Web Portal + Defense API</h3>
             <p className="mt-4 text-body text-gray-600">
-              The two products sit side by side. Subscribe to one, the other,
-              or both depending on your team. Web Portal billing is
+              The two access paths sit side by side. Subscribe to one, the
+              other, or both depending on your team. Web Portal billing is
               independent of API billing — you only pay for what each team
               uses.
             </p>
@@ -469,7 +472,7 @@ export default function WebPortalPage() {
 
       <CtaBand
         headline="Score your next dispute in your browser."
-        ctaLabel="Start in the Web Portal"
+        ctaLabel="Get Instant Access"
         ctaHref={SIGNUP_URL}
       />
     </PageShell>

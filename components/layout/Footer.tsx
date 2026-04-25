@@ -4,13 +4,18 @@ import Link from "next/link";
 // Full-bleed bg-navy. 4-column grid on desktop.
 // Column headers: eyebrow white uppercase.
 // Links: body text, white/70 → white on hover.
-// Bottom bar separated by border-t white/10, with logo + copyright and social.
+// Bottom bar separated by border-t white/10, with logo + copyright.
 //
-// Architecture doc footer spec — 4 columns:
-//   Product: Defense, PreAuth, How It Works, Pricing, API
+// Current 4-column layout:
+//   Product: Defense, PreAuth, Web Portal, How It Works, Pricing, API
 //   Company: Partners, Blog, Contact
-//   Legal:   Privacy, Terms, Opt-Out
-//   Contact: operations@kombatix.io, Eagle, ID 83616
+//   Legal:   Privacy Policy, Terms of Service
+//            (Opt-Out intentionally NOT included — Kombatix is a service
+//             provider not a data broker, so CCPA/CPRA opt-out-of-sale and
+//             broker-registration regimes don't apply. Privacy rights are
+//             handled inside the Privacy Policy itself.)
+//   Contact: operations@kombatix.io, (208) 944-1422,
+//            Kombatix, LLC, 2976 E State St, STE 120-2914, Eagle, ID 83616
 
 const FOOTER_COLUMNS = [
   {

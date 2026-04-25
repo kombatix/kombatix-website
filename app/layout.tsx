@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Kombatix",
   },
   description:
-    "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Start free.",
+    "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Get instant access.",
   openGraph: {
     type: "website",
     siteName: "Kombatix",

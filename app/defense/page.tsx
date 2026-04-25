@@ -392,14 +392,23 @@ export default function DefensePage() {
           </h2>
           <p className="mt-6 text-body-lg text-gray-600">
             Standard starts at $75/month with 75 hits included. Advanced
-            $500/month includes 1,000 hits. Enterprise plans are custom. Defense
-            billing is weighted toward high-confidence friendly-fraud results —
-            you&apos;re charged for scores that move the needle, not for ones
-            that don&apos;t.
+            $500/month includes 1,000 hits. Enterprise plans are custom.
+            Defense billing is weighted toward high-confidence friendly-fraud
+            results — you&apos;re charged for scores that move the needle, not
+            for ones that don&apos;t.
           </p>
-          <div className="mt-8">
+          <p className="mt-4 text-body text-gray-600">
+            Don&apos;t need an API integration? Web Portal Access starts at
+            $35/month with the same Defense scoring engine, no developer
+            required.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button href="/pricing#defense" variant="primary">
               View Full Defense Pricing{" "}
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Button>
+            <Button href="/web-portal" variant="ghost-light">
+              Compare Web Portal Access{" "}
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Button>
           </div>

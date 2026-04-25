@@ -228,7 +228,7 @@ export function PricingToggle() {
               "No-hit: $0.005 each",
               "Hits: $0.15 each",
               "$49 monthly credit",
-              "API key + documentation access",
+              "API access live as soon as you subscribe",
             ]}
             ctaLabel="Select Plan"
             ctaHref={SIGNUP_URL}

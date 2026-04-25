@@ -27,12 +27,12 @@ const SIGNUP_URL = "https://app.kombatix.ai/signup";
 export const metadata: Metadata = {
   title: "Kombatix — Identity Scoring for Friendly Fraud Defense",
   description:
-    "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Start free.",
+    "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Get instant access.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Kombatix — Identity Scoring for Friendly Fraud Defense",
     description:
-      "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Start free.",
+      "Real-time identity scoring to fight friendly fraud at pre-auth and at dispute. Three products, one network. Get instant access.",
     url: "https://kombatix.io/",
   },
 };
@@ -175,56 +175,83 @@ export default function HomePage() {
         </p>
       </Section>
 
-      {/* 3 — Two-Product Panel (OFF-WHITE) */}
+      {/* 3 — Product Lineup (OFF-WHITE) */}
       <Section tone="off-white" spacing="default">
         <div className="max-w-3xl">
-          <EyebrowTag tone="light">One platform · Two products</EyebrowTag>
+          <EyebrowTag tone="light">One platform · Three products</EyebrowTag>
           <h2 className="text-display text-navy mt-3">
-            Identity scoring at both ends of the fraud lifecycle.
+            Identity scoring at both ends of the fraud lifecycle — API or
+            no-code, your choice.
           </h2>
           <p className="mt-6 text-body-lg text-gray-600">
-            Kombatix is not a single product. It&apos;s a full-lifecycle
-            identity defense system — screening transactions before
-            authorization, and scoring disputes at the moment of contact.
+            Kombatix is a full-lifecycle identity defense system. Screen
+            transactions before authorization, score disputes at the moment of
+            contact, and run those scores either through your own API
+            integration or through a browser-based portal built for support
+            teams without engineering capacity.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* PreAuth card */}
           <Card tone="light">
-            <EyebrowTag tone="light">Pre-Authorization</EyebrowTag>
+            <EyebrowTag tone="light">Pre-Authorization · API</EyebrowTag>
             <h3 className="text-h2 text-navy mt-3">Kombatix PreAuth</h3>
             <p className="mt-4 text-body text-gray-600">
-              Screen every transaction against the growing Kombatix network of
-              confirmed friendly fraudsters — before you authorize. Lightweight
-              API, millisecond response, fraction of a cent per no-hit check.
+              Screen every transaction against the growing Kombatix Network of
+              confirmed friendly fraudsters — before you authorize.
+              Lightweight API, millisecond response, fraction of a cent per
+              no-hit check.
             </p>
             <div className="mt-6">
               <Link
                 href="/preauth"
                 className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
               >
-                Explore PreAuth <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Explore PreAuth{" "}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </Card>
 
-          {/* Defense card */}
+          {/* Defense API card */}
           <Card tone="light">
-            <EyebrowTag tone="light">Dispute Defense</EyebrowTag>
+            <EyebrowTag tone="light">Dispute Defense · API</EyebrowTag>
             <h3 className="text-h2 text-navy mt-3">Kombatix Defense</h3>
             <p className="mt-4 text-body text-gray-600">
               When a customer disputes a charge, score their identity in
               real-time against the original transaction. Three engines, one
-              composite score, AI-generated evidence narrative — in
-              milliseconds.
+              composite score, AI-generated evidence narrative — embed the
+              result directly in your CRM, helpdesk, or chargeback workflow.
             </p>
             <div className="mt-6">
               <Link
                 href="/defense"
                 className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
               >
-                Explore Defense <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Explore Defense{" "}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </Card>
+
+          {/* Web Portal card */}
+          <Card tone="light">
+            <EyebrowTag tone="light">Dispute Defense · No-Code</EyebrowTag>
+            <h3 className="text-h2 text-navy mt-3">Web Portal Access</h3>
+            <p className="mt-4 text-body text-gray-600">
+              The same Defense scoring engine, accessed through a browser.
+              Support and CX teams paste dispute details, get a full report
+              with AI insights, export to PDF, and search past results — no
+              developer required.
+            </p>
+            <div className="mt-6">
+              <Link
+                href="/web-portal"
+                className="text-accent font-semibold inline-flex items-center gap-1 hover:underline"
+              >
+                Explore Web Portal{" "}
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </Card>
@@ -237,15 +264,16 @@ export default function HomePage() {
           <div>
             <EyebrowTag>The Kombatix Network</EyebrowTag>
             <h2 className="text-display mt-3">
-              Every Kombatix Defense customer strengthens every Kombatix PreAuth
+              Every Defense scoring customer strengthens every PreAuth
               customer.
             </h2>
             <p className="mt-6 text-body-lg text-white/72">
-              When a Kombatix Defense score confirms friendly fraud, that
-              identity joins the Kombatix Network — the shared database every
-              PreAuth customer screens against. The more merchants in the
-              network, the more friendly fraudsters caught at pre-auth, before
-              the transaction completes. This is a flywheel, not a feature.
+              When a Defense score confirms friendly fraud — whether scored
+              through the API or the Web Portal — that identity joins the
+              Kombatix Network, the shared database every PreAuth customer
+              screens against. The more merchants in the network, the more
+              friendly fraudsters caught at pre-authorization, before the
+              transaction completes. This is a flywheel, not a feature.
             </p>
           </div>
           {/* IMG-08 placeholder */}

@@ -152,15 +152,16 @@ export default function PreAuthPage() {
         <div className="mt-12 rounded-xl bg-navy text-white p-8 md:p-12">
           <EyebrowTag>The Network Is the Product</EyebrowTag>
           <p className="mt-3 text-h2">
-            Every transaction a Kombatix Defense customer scores as friendly
-            fraud populates the Kombatix Network. Every PreAuth customer
-            screens against that network.
+            Every Defense score that lands in the friendly-fraud band
+            populates the Kombatix Network. Every PreAuth customer screens
+            against that network.
           </p>
           <p className="mt-6 text-body text-white/72">
-            The more merchants in the network, the faster friendly fraudsters
-            are identified across the ecosystem. Only Defense scores of 60 or
-            higher contribute to the network — matches the &quot;pay for
-            actionable results&quot; threshold.
+            Defense scoring runs through both the Defense API and the Web
+            Portal — every score of 60 or higher (the &quot;pay for actionable
+            results&quot; threshold) flows back into the shared network. The
+            more merchants scoring, the faster friendly fraudsters are
+            identified across the ecosystem.
           </p>
         </div>
       </Section>
@@ -266,7 +267,7 @@ export default function PreAuthPage() {
               "No-hit: $0.005 each",
               "Hits: $0.15 each",
               "$49 monthly credit toward usage",
-              "API key + documentation access",
+              "API access live as soon as you subscribe",
             ]}
             ctaLabel="Select Plan"
             ctaHref={SIGNUP_URL}
@@ -281,7 +282,7 @@ export default function PreAuthPage() {
               "Hits: $0.10 each",
               "$149 monthly credit",
               "Priority support",
-              "API key + documentation access",
+              "API access live as soon as you subscribe",
             ]}
             ctaLabel="Select Plan"
             ctaHref={SIGNUP_URL}
