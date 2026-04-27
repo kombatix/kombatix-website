@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components/ui/Link";
 import { type ReactNode, type ButtonHTMLAttributes, type AnchorHTMLAttributes, forwardRef } from "react";
 import { cn } from "@/lib/cn";
 

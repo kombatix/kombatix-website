@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components/ui/Link";
 
 // DESIGN.md §7.9 — Footer
 // Full-bleed bg-navy. 4-column grid on desktop.
