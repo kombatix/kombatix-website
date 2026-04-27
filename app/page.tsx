@@ -114,17 +114,26 @@ export default function HomePage() {
         <div className="max-w-3xl">
           <EyebrowTag tone="light">The Gap in the Fraud Stack</EyebrowTag>
           <h2 className="text-display text-navy mt-3">
-            Fraud prevention stops strangers. Chargeback tools fight disputes
-            after they&apos;re filed. Nothing sits in the middle.
+            Fraud prevention stops strangers. Chargeback alerts give you a
+            warning. Neither tells you whether the dispute is real.
           </h2>
           <p className="mt-6 text-body-lg text-gray-600">
             Your Kount or Signifyd catches the stolen credit card at checkout.
-            Your Ethoca or Verifi alerts give you a window to resolve after a
-            dispute is filed with the bank. But in between — when the
-            authorized cardholder changes their mind, or exploits your refund
-            policy, or disputes a legitimate purchase claiming it wasn&apos;t
-            them — you have nothing. No score. No proof. No answer. You guess,
-            or you refund.
+            Your Ethoca or Verifi alerts give you a window to refund before a
+            dispute becomes a chargeback. But in between — when the authorized
+            cardholder changes their mind, exploits your refund policy, or
+            disputes a legitimate purchase claiming it wasn&apos;t them —
+            you have nothing. No score. No proof. No answer. You guess, or you
+            refund.
+          </p>
+          <p className="mt-6 text-body-lg text-gray-600">
+            And when a fraud-coded chargeback does land at the bank, the burden
+            shifts to you to <em>prove</em> the cardholder made the purchase.
+            Most merchants lose. Without timestamped identity evidence —
+            without a structured report tying the disputing party back to the
+            original transaction — fraud-coded chargebacks become write-offs
+            that no alert tool, no representment platform, no support script
+            can recover.
           </p>
         </div>
 
@@ -162,16 +171,19 @@ export default function HomePage() {
           Kombatix fills the gap with real-time identity scoring at two
           critical moments: pre-authorization (PreAuth) screens against a
           known-fraudster network, and dispute-time (Defense) scores identity
-          against the original transaction and returns a 0–100 composite score
-          you can act on.
+          against the original transaction and returns a 0–100 composite
+          score you can act on.
         </p>
         <p className="mt-6 text-body-lg text-gray-600 max-w-3xl">
-          And when a dispute does land at the bank, every Defense report ships
-          with a structured evidence package — composite score, identity match
-          breakdown, reason codes, and a ready-to-use AI Defense Narrative —
-          your team attaches directly to chargeback representment. Issuers see
-          timestamped identity evidence instead of a guess; cases that used to
-          be write-offs become winnable.
+          When a fraud-coded chargeback does land at the bank, every Defense
+          report ships with a structured evidence package — composite score,
+          identity match breakdown, reason codes, and a ready-to-use AI
+          Defense Narrative — your team attaches directly to your
+          representment submission. The issuer sees timestamped identity
+          evidence proving the disputing party is the same person who made
+          the purchase. The fraud claim falls apart. Cases that used to be
+          write-offs become winnable, and merchants in production are doubling
+          their fraud-chargeback win rate.
         </p>
       </Section>
 
