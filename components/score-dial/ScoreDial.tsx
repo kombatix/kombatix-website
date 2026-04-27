@@ -210,20 +210,34 @@ export function ScoreDial({
           />
         </svg>
 
-        {/* Center label */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+        {/* Center label — typography scales with dial size, not viewport,
+            so the small (md) dial keeps its label inside the inner ring. */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-4">
           <span
-            className="text-5xl md:text-6xl font-bold tabular-nums"
+            className={cn(
+              "font-bold tabular-nums",
+              size === "lg" ? "text-5xl md:text-6xl" : "text-4xl",
+            )}
             style={{ color, lineHeight: 1 }}
             aria-hidden="true"
           >
             {displayScore}
           </span>
-          <span className="text-body-sm text-white/70 mt-1 uppercase tracking-wide">
+          <span
+            className={cn(
+              "text-white/70 mt-1 uppercase tracking-wide",
+              size === "lg" ? "text-body-sm" : "text-[11px]",
+            )}
+          >
             {label}
           </span>
           {subLabel && (
-            <span className="text-body-sm text-white/60 mt-1 text-center max-w-[10rem]">
+            <span
+              className={cn(
+                "text-white/60 mt-1 text-center leading-tight",
+                size === "lg" ? "text-body-sm max-w-[10rem]" : "text-[11px] max-w-[7.5rem]",
+              )}
+            >
               {subLabel}
             </span>
           )}

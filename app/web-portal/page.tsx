@@ -103,7 +103,7 @@ export default function WebPortalPage() {
                 <span className="inline-block w-2 h-2 rounded-full bg-score-low/70" />
                 <span className="inline-block w-2 h-2 rounded-full bg-score-mid/70" />
                 <span className="inline-block w-2 h-2 rounded-full bg-score-high/70" />
-                <span className="ml-2">portal.kombatix.io</span>
+                <span className="ml-2">app.kombatix.ai</span>
               </div>
               <p className="text-eyebrow text-teal uppercase tracking-[0.1em] font-bold">
                 New Defense Search
@@ -287,7 +287,7 @@ export default function WebPortalPage() {
               <TableRow>
                 <TableCell className="font-semibold">1. Open the portal</TableCell>
                 <TableCell>
-                  Sign in at portal.kombatix.io. Each team member gets their
+                  Sign in at app.kombatix.ai. Each team member gets their
                   own login; usage rolls up to your subscription.
                 </TableCell>
               </TableRow>
