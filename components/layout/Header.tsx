@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect, useId } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
@@ -84,10 +85,17 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-white font-bold text-xl tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
+          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
           aria-label="Kombatix home"
         >
-          <span>Kombatix</span>
+          <Image
+            src="/logo/wordmark-white.png"
+            alt="Kombatix"
+            width={369}
+            height={57}
+            priority
+            className="h-7 md:h-8 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}

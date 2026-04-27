@@ -63,7 +63,7 @@ export default function HomePage() {
               <EyebrowTag>
                 Real-Time Identity Scoring · From Pre-Authorization to Dispute
               </EyebrowTag>
-              <h1 className="text-hero mt-3">
+              <h1 className="text-display mt-3">
                 Know who you&apos;re fighting. Before you authorize, before you
                 refund, before you pay out.
               </h1>
